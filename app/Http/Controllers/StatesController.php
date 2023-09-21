@@ -40,9 +40,9 @@ class StatesController extends Controller
     public function addStates(Request $request) {
 
         $validator = Validator::make($request->all(), [
-            'state_id' => 'required|string|max:2000',
+            'state_id' => 'required|max:2000',
             'state' => 'required|max:200|string',
-            'cities' => 'required|max:5000|string'
+            'cities' => 'required|max:5000'
         ]);
 
         if($validator->fails()) {
@@ -56,7 +56,7 @@ class StatesController extends Controller
 
             $state = States::create([
                 'state_id' => $request->state_id,
-                'state' => $request->state,
+                'state' => json_encode($request->state),
                 'cities' => $request->cities
             ]);
 

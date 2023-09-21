@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('state_id');
             $table->string('state');
-            $table->string('cities');
+            $table->json('cities');
             $table->timestamps();
         });
     }

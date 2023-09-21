@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('states', [StatesController::class, 'allStates']);
 
-Route::get('add_states', [StatesController::class, 'addStates']);
+Route::post('add_state', [StatesController::class, 'addStates']);
